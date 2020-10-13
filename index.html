@@ -12,55 +12,98 @@
   </head>
   <body>
       
-      <nav class="navbar navbar-expand-sm navbar-light bg-light">
-          <a class="navbar-brand" href="#">fasenTECH</a>
-          <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-          aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                     <li class="nav-item">
-                        <a class="nav-link" href="cadastro/vaca.html">Cadastrar animal</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="leite.html">Leite <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="animal.html">Animal doente</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">fasenTECH</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadastro/vaca.html">Cadastrar animal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="leite.html">Leite</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tratamento.html">Animal doente</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         
     <div class="container my-5 py-3 bg-light">
         
-        <form action="#" method="post">
-            
-            <div class="form-group">
-                <label for="codigo-vaca">Codigo do animal</label>
-                <input class="form-control" type="number" name="codigo_vaca" id="codigo_vaca" placeholder="Vaca">
-            </div>
-            
-            <div class="form-group">
-                <label for="quantidade">Quantidade de leite</label>
-                <input class="form-control" type="number" name="quantidade" id="quantidade" placeholder="(litros)">
-            </div>
-            
-            <div class="form-group">
-                <label for="codigo-vaca">Funcionário</label>
-                <input class="form-control" type="text" name="funcionario" id="funcionario" placeholder="Quem ordenhou">
-            </div>
+        <section class="my-3">
+            <h1>Produção de leite</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Vaca</th>
+                        <th>Quantidade</th>
+                        <th>Horário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>2L</td>
+                        <td>07:30</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>2,2L</td>
+                        <td>07:40</td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>2,5L</td>
+                        <td>07:47</td>
+                    </tr>
+                    <tr>
+                        <td>004</td>
+                        <td>2,1L</td>
+                        <td>07:55</td>
+                    </tr>
+                    <tr>
+                        <td>005</td>
+                        <td>2,3L</td>
+                        <td>08:00</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
 
-            <div class="form-inline justify-content-between">
-                <div class="form-inline">
-                    <label for="time" class="mr-2">Horário</label>
-                    <input class="form-control" type="time" name="time" id="time">
-                </div>
-                <a href="#" class="btn btn-primary">Enviar</a>
-            </div>
+        <section class="my-3">
+            <h1>Animais em tratamento</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Vaca</th>
+                        <th>Descrição do tratamento</th>
+                        <th>Inicio</th>
+                        <th>Término</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>005</td>
+                        <td>Está tomando medicamentos contra carrapatos</td>
+                        <td>02/07/2020</td>
+                        <td>04/07/2020</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>    
 
-        </form>
     </div>
       
         <!-- Optional JavaScript -->
