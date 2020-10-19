@@ -9,9 +9,30 @@ drop table funcionaro, endereco, produto, tipo_produto;
 create table producao_leite
 (
     id int IDENTITY primary key,
-    codigo_animal int not null,
     horario datetime not null,
     quantidade int default 0,
+    id_animal int not null
+);
+
+
+create table animal
+(
+    id int IDENTITY primary key,
+    codigo_animal int not null,
+    horario datetime not null,
+    raça char(30) not null,
+    idade int not null,
+    especie char(30),
+);
+
+
+create table colheita
+(
+    id int IDENTITY primary key,
+    sacas int not null default 0,
+    dia date not null,
+    descricao char(100) null,
+    id_produto int not null
 );
 
 
@@ -22,7 +43,7 @@ create table produto
     quantidade int not null default 0,
     preço real not null,
     descricao char(100) null,
-    id_tipo int not null
+    id_tipo_produto int not null
 );
 
 
@@ -38,6 +59,7 @@ create table verejista
     id int IDENTITY primary key,
     nome char(30) not null,
     cnpj char(20) unique not null,
+    email char(80) not null,
     tel int not null,
     id_endereco int not null
 );
@@ -49,9 +71,10 @@ create table venda
     item char(30) not null,
     quantidade int not null default 0,
     preço real not null,
-    id_tipo int not null,
-    id_varegista int not null,
-    descricao char(100) null
+    horario datetime not null,
+    descricao char(100) null,
+    id_produto int not null,
+    id_varegista int not null
 );
 
 
@@ -91,6 +114,33 @@ create table endereco
 ALTER table funcionario
 ADD CONSTRAINT fk_endereco_funcionario FOREIGN KEY (id_endereco)
 REFERENCES endereco(id);
+
+-- varejista
+ALTER table verejista
+ADD CONSTRAINT fk_endereco_varegista FOREIGN KEY (id_endereco)
+REFERENCES endereco(id);
+
+-- venda varejista
+ALTER table venda
+ADD CONSTRAINT fk_venda_varegista FOREIGN KEY (id_varegista)
+REFERENCES varegista(id);
+
+-- venda produto
+ALTER table venda
+ADD CONSTRAINT fk_venda_tipo FOREIGN KEY (id_produto)
+REFERENCES produto(id);
+
+
+-- produto tipo
+ALTER table produto
+ADD CONSTRAINT fk_produto_tipo_produto FOREIGN KEY (id_tipo_produto)
+REFERENCES tipo_produto(id);
+
+
+select * from tipo_produtos
+insert into tipo_produtos 
+values 
+    ('cana'),('soja'),('café');
 
 
 select * from endereco;
