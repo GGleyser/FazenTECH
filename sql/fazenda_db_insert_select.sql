@@ -1,4 +1,3 @@
-
 select * from endereco;
 insert into endereco
 values
@@ -58,8 +57,8 @@ values
 select * from colheita;
 insert into colheita 
 values
-    (600, '2014-06-10', '', 3),
-    (580, '2014-06-11', '', 3),
+    (600, '2014-06-10', '', 1),
+    (580, '2014-06-11', '', 1),
     (300, '2014-06-12', '', 3);
 
 
@@ -79,8 +78,17 @@ values
     ('roçadeira', 3000.00, '');
 
 
-
 -- selecionar as vendas totais de produtos
+select v.id, v.quantidade, v.preço, v.horario, p.nome as [produto], vj.nome as [varegista], vj.cnpj, 
+p.preço_por_unidade*v.quantidade as [total] 
+from venda v inner join varejista vj on (vj.id = v.id_varejista) 
+inner join produto p on (p.id = v.id_produto) order by v.id;
 
+-- select * from equipamento; consulta o valor gasto
+select sum(e.valor) as [gastos com equipamento] from equipamento e;
 
--- selecionar a vaca que da menos leite e quem trata dela
+-- selecionar as vacas que deram menos leite e quem trata delas
+select pl.quantidade,  a.id as [código do animal], a.raça, pl.horario, f.nome from producao_leite pl inner join animal a on pl.id_animal = a.id inner join funcionario f on pl.id_funcionario = f.id order by pl.quantidade asc;
+
+-- colheita
+select tp.nome as [tipo], p.nome , c.sacas, p.preço_por_unidade*c.sacas as [total] from colheita c inner join produto p on c.id_produto = p.id inner join tipo_produto tp on tp.id = p.id_tipo_produto;
