@@ -100,6 +100,15 @@ create table endereco
     uf char(2) not null,
 );
 
+create table plantio
+(
+    id int IDENTITY primary key,
+    quantidade bigint not null,
+    dia date not null,
+    descricao char(100) null,
+    id_produto int not null
+);
+
 
 ALTER table funcionario
 ADD CONSTRAINT fk_endereco_funcionario FOREIGN KEY (id_endereco)
@@ -128,6 +137,11 @@ REFERENCES tipo_produto(id);
 -- colheita produto
 ALTER table colheita
 ADD CONSTRAINT fk_colheita_produto FOREIGN KEY (id_produto)
+REFERENCES produto(id);
+
+-- plantio produto
+ALTER table plantio
+ADD CONSTRAINT fk_plantio_produto FOREIGN KEY (id_produto)
 REFERENCES produto(id);
 
 -- producao_leite

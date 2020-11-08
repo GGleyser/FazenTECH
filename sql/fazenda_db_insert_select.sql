@@ -1,4 +1,4 @@
-select * from endereco;
+-- select * from endereco;
 insert into endereco
 values
     ('rua almeida', 255, '25205525', 'belo horizonte', 'MG'),
@@ -8,7 +8,7 @@ values
     ('rua do prata', 65, '97205525', 'vespasiano', 'MG');
 
 
-select * from funcionario;
+-- select * from funcionario;
 insert into funcionario
 values
     ('daniel', 'S', '02000004205', '33925252', '15/02/1989', 1200.00, 1),
@@ -16,7 +16,7 @@ values
     ('samuel', 'G', '32000005005', '34455622', '26/08/1996', 3100.00, 2);
 
 
-select * from animal;
+-- select * from animal;
 insert into animal 
 values
     ( '2020-06-10 14:10:00', 'raça', '10-06-2014', 'Bovino'),
@@ -24,13 +24,13 @@ values
     ( '2020-06-10 14:10:00', 'raça', '10-06-2014', 'Bovino');
 
 
-select * from tipo_produto
+-- select * from tipo_produto
 insert into tipo_produto
 values 
     ('grãos'),('leite'),('derivados do leite');
 
 
-select * from produto;
+-- select * from produto;
 insert into produto 
 values
     ('café', 'sacas', 18.00, '', 1),
@@ -38,7 +38,7 @@ values
     ('soja', 'sacas', 20.00, '', 1);
 
 
-select * from producao_leite;
+-- select * from producao_leite;
 insert into producao_leite 
 values
     ( '2020-06-10 07:00:00', 10.5, 1, 1),
@@ -46,7 +46,7 @@ values
     ( '2020-06-10 07:30:00', 8.6, 2, 3);
 
 
-select * from varejista;
+-- select * from varejista;
 insert into varejista 
 values
     ('Carlos', '000002000011', 'carlosrevendedor@gmail.com', 3300224455, 3),
@@ -54,7 +54,16 @@ values
     ('Renata', '367002000030', 'carlosrevendedor@gmail.com', 3322219805, 5);
 
 
-select * from colheita;
+
+-- select * from plantio;
+insert into plantio 
+values
+    (600, '2014-01-10', '', 1),
+    (580, '2014-01-11', '', 1),
+    (300, '2014-01-12', '', 3);
+
+
+-- select * from colheita;
 insert into colheita 
 values
     (600, '2014-06-10', '', 1),
@@ -62,7 +71,7 @@ values
     (300, '2014-06-12', '', 3);
 
 
-select * from venda;
+-- select * from venda;
 insert into venda 
 values
     (200, 20.00, '2020-08-10 14:00:00', '', 1, 1),
@@ -70,7 +79,7 @@ values
     (400, 32.00, '2020-08-10 08:35:00', '', 2, 2);
 
 
-select * from equipamento;
+-- select * from equipamento;
 insert into equipamento
 values 
     ('pá', 30.00, ''),
